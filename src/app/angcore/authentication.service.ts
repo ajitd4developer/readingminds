@@ -38,6 +38,17 @@ user: Observable<User>
     this.angfAuth.authState.subscribe(data=> this.authenticationstate = data)
                }
 
+
+      get authenticated(): boolean{
+        return this.authenticationstate!=null
+
+      }
+
+      get currentUserId(): string{
+        return this.authenticated?this.authenticationstate.uid :null;
+      }
+
+      
     readingmindemailSignIn(email:string,password:string){
       return this.angfAuth.auth.signInWithEmailAndPassword(email,password)
       .then(()=>console.log("Reading Minds sign in success"))
