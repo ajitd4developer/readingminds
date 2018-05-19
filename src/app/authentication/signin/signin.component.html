@@ -1,0 +1,33 @@
+<section>
+  <main>
+    <form [formGroup] = 'readingMindSignInForm' (ngSubmit)="readingmindsSignIn()">
+      <h2>Reading Minds Welcomes You</h2>
+      <p>Login into Reading Minds </p>
+      <mat-form-field [formGroup] = 'readingMindSignInForm'>
+        <h4>Email</h4>
+        <input matInput placeholder="Please Enter Your Email" [formControl] = 'email' required > 
+        <mat-error *ngIf="email.valid">In correct Email Format</mat-error>
+      </mat-form-field>
+
+      <mat-form-field [formGroup] = 'readingMindSignInForm'>
+          <h4>Password</h4>
+        <input matInput placeholder="Please Enter Your Password"  
+        [type] ="formhide ? 'password' : 'text'" [formControl] = 'password' required >
+        <mat-icon matSuffix (click)="formhide = !formhide">{{formhide ?'visibility' :'visibility_off'}}</mat-icon>
+        <mat-hint align="end">
+          <a routerLink="/reset">Forgot Password</a>
+        </mat-hint>
+        <mat-error *ngIf="password.valid">In correct Password</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Sign in</button>
+      <p>Your own way of Login</p>
+      <button mat-raised-button color="accent" (click)="authenticationsvc.googleSignIn()">Google</button>
+      <button mat-raised-button color="warn"(click)="authenticationsvc.fbSignIn()">Face Book</button>
+      <button mat-raised-button color="primary" (click)="authenticationsvc.githubSignIn()">Git Hub</button>
+      <button mat-raised-button color="warn" (click)="authenticationsvc.twitterSignIn()">Twitter</button>
+      <button mat-raised-button color="accent" (click)="authenticationsvc.readingmindsSignOut()">Sign Out</button>
+
+    </form>
+  </main>
+  
+</section>

@@ -1,0 +1,12 @@
+<main>
+  <section>
+    <h2>Forgot your password?</h2>
+    <p>We can send you a reset Password Link</p>
+    <mat-form-field>
+     
+      <input matInput placeholder="Enter your Email Id" [(ngModel)] = "email" value="Enter your Email Id" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="resetPassword()" >Reset</button>
+    
+  </section>
+</main>

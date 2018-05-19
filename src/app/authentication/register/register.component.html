@@ -1,0 +1,23 @@
+<section>
+    <main>
+      <form [formGroup] = 'readingMindRegisterForm' (ngSubmit)="readingmindsRegister()">
+        <h2>Reading Minds Welcomes You</h2>
+        <p>Register into Reading Minds </p>
+        <mat-form-field [formGroup] = 'readingMindRegisterForm'>
+          <h4>Email</h4>
+          <input matInput placeholder="Please Enter Your Email" [formControl] = 'email' required > 
+          <mat-error *ngIf="email.valid">In correct Email Format</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field [formGroup] = 'readingMindRegisterForm'>
+            <h4>Password</h4>
+          <input matInput placeholder="Please Enter Your Password"  
+          [type] ="formhide ? 'password' : 'text'" [formControl] = 'password' required >
+          <mat-icon matSuffix (click)="formhide = !formhide">{{formhide ?'visibility' :'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="password.valid">In correct Password</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Sign in</button>
+      </form>
+    </main>
+    
+  </section>

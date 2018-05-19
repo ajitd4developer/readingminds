@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AuthenticationModule } from '../authentication/authentication.module';
+import { AuthenticationService } from './authentication.service';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireStorageModule} from 'angularfire2/storage';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 
 @NgModule({
   imports: [
-    CommonModule
+  
+    AuthenticationModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [AuthenticationService]
 })
 export class AngcoreModule { }
