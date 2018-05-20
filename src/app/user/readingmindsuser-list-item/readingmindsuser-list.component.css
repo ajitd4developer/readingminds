@@ -21,10 +21,8 @@ mat-card-title{
 mat-card-subtitle{
     margin-left: -80px;
 }
-mat-card-actions{
-    margin:1em;
-}
+
 mat-card-content{
-    margin:1em;
-    
+    margin-top: 20px;
+    margin-left: 10px;
 }

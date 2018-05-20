@@ -10,7 +10,7 @@ import { ReadingmindsuserListItemComponent } from './readingmindsuser-list-item/
 const angroutes :Routes =  [
   {path:'me',component:ReadingmindsuserDashboardComponent,data:{title:'ReadingMinds My Dashboard '}},
   {path:'readingmindsusers',component:ReadingmindsuserListComponent,data:{title:'Reading Minds Users list '}},
-  {path:'readingmindsprofile',component:ReadingmindsuserDetailComponent,data:{title:'Reading Minds Profile '}},
+  {path:'readingmindsusers/:id',component:ReadingmindsuserDetailComponent,data:{title:'Reading Minds Profile '}},
 ]
 
 @NgModule({
@@ -18,6 +18,9 @@ const angroutes :Routes =  [
     AngsharedModule,
     
     RouterModule.forChild(angroutes),
+  ],
+  exports: [
+    ReadingmindsuserListItemComponent
   ],
   declarations: [ReadingmindsuserDashboardComponent, ReadingmindsuserDetailComponent, ReadingmindsuserListComponent, ReadingmindsuserListItemComponent],
   providers: [UserService]

@@ -1,1 +1,9 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";   
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+    --app-background-color: #f6f6f6;
+    --app-primary-color : red;
+}
+body{
+    background-color: var(--app-background-color);
+}

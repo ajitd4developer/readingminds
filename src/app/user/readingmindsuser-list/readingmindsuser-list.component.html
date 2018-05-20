@@ -1,3 +1,2 @@
-<p>
-  readingmindsuser-list works!
-</p>
+<app-readingmindsuser-list-item *ngFor = "let user of users |async" [user] = 'user'></app-readingmindsuser-list-item>
+

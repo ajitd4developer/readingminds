@@ -1,0 +1,30 @@
+ul {
+    list-style: none;
+}
+
+mat-card {
+    margin: 10px;
+    width:300px;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    margin-top: 50px;
+
+}
+
+mat-card-title{
+    margin-left: -80px;
+}
+
+mat-card-subtitle{
+    margin-left: -80px;
+}
+mat-card-actions{
+    margin:1em;
+}
+mat-card-content{
+    margin:1em;
+    
+}

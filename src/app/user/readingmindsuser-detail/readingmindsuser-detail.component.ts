@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
+import {UserService} from '../user.service';
+import {User} from '../user.model';
 
 @Component({
   selector: 'app-readingmindsuser-detail',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./readingmindsuser-detail.component.css']
 })
 export class ReadingmindsuserDetailComponent implements OnInit {
-
-  constructor() { }
+  user:User;
+  constructor(private route:ActivatedRoute,
+    private userService:UserService) { }
 
   ngOnInit() {
+    this.getUser();
   }
 
+  getUser():void{
+    const id = this.route.snapshot.paramMap.get('id')
+    this.userService.getReadingMindsUser(id).subscribe(user => this.user = user)
+    
+  }
 }
