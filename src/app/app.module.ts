@@ -9,6 +9,7 @@ import { AngcoreModule } from './angcore/angcore.module';
 import { AngroutingModule } from './/angrouting.module';
 import { environment } from '../environments/environment';
 import { AngsharedModule } from './angshared/angshared.module';
+import { PostModule } from './post/post.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AngsharedModule } from './angshared/angshared.module';
     AngcoreModule,
     AngroutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngsharedModule
+    AngsharedModule,
+    PostModule
 
   ],
   providers: [],
