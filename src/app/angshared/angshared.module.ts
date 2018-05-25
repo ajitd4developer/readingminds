@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from "@angular/router";
-import {AngmaterialModule} from '../angmaterial.module'
+import {AngmaterialModule} from '../angmaterial.module';
+import { FromNowPipe } from './from-now.pipe'
 
 @NgModule({
   imports: [
@@ -16,8 +17,9 @@ import {AngmaterialModule} from '../angmaterial.module'
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AngmaterialModule
+    AngmaterialModule,
+    FromNowPipe
   ],
-  declarations: []
+  declarations: [FromNowPipe]
 })
 export class AngsharedModule { }

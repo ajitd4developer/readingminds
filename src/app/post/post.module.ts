@@ -8,13 +8,13 @@ import { PostListItemComponent } from './post-list-item/post-list-item.component
 import{Routes,RouterModule} from '@angular/router';
 
 const angroutes :Routes =  [
-  {path:'blog',component:PostListComponent,data:{title:'ReadingMinds Blog Post List '}},
-  {path:'blog/:id',component:PostDetailComponent,data:{title:'Reading Minds Blog Post Details '}},
+  {path:"blog",component:PostListComponent,data:{title:'ReadingMinds Blog Post List '}},
+  {path:"blog/:id",component:PostDetailComponent,data:{title:'Reading Minds Blog Post Details '}},
 ]
 @NgModule({
   imports: [
     AngsharedModule,
-    RouterModule.forChild(angroutes),
+    RouterModule.forChild(angroutes)
   ],
   exports:[PostDashboardComponent],
 

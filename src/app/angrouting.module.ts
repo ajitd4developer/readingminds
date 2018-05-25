@@ -5,7 +5,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 
 const angroutes: Routes = [
   {path :'', redirectTo: '/readingmindsusers' , pathMatch:'full' },
- {path :'', loadChildren:()=>AuthenticationModule }
+ {path :'', loadChildren:"./authentication/authentication.module" }
   
 ]
 @NgModule({

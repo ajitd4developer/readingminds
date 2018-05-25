@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from '../user.model'
 import { AuthenticationService } from '../../angcore/authentication.service';
 import { UserService } from '../user.service';
-import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
+import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage' ;
 import {Location} from '@angular/common'
 @Component({
   selector: 'app-readingmindsuser-dashboard',
@@ -12,7 +12,7 @@ import {Location} from '@angular/common'
 export class ReadingmindsuserDashboardComponent implements OnInit {
   user:User;
   editing = false;
-  task:AngularFireUploadTask
+  task:AngularFireUploadTask;
   constructor(private angfs:AuthenticationService,
     private userService:UserService,
     private storage:AngularFireStorage,
