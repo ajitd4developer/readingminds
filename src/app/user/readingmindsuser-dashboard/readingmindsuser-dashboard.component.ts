@@ -13,15 +13,33 @@ export class ReadingmindsuserDashboardComponent implements OnInit {
   user:User;
   editing = false;
   task:AngularFireUploadTask;
+  path: string
+  meta: object
+  uploadType: boolean
   constructor(private angfs:AuthenticationService,
     private userService:UserService,
     private storage:AngularFireStorage,
     private location:Location) { }
 
   ngOnInit() {
-    this.getUser()
+    this.getUser();
+    this.setUploadData();
   }
 
+  setUploadData() {
+    return this.angfs.user.subscribe(user => {
+      // wrap this in a if statement
+      // to avoid error msg on logout
+      if (user) {
+        this.path = `users/${user.uid}`
+        this.meta = { uploader: user.uid, website: 'https://foli.sk' }
+        // true means Collection upload
+        // false means document field upload
+        this.uploadType = true
+      }
+    })
+
+  }
   getUser(){
     return this.angfs.user.subscribe(user=>(this.user = user))
   }

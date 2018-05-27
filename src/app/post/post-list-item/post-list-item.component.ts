@@ -38,7 +38,7 @@ export class PostListItemComponent implements OnInit {
     this.editing=false;
   }
 
-  ploadPostImage(event) {
+  uploadPostImage(event) {
     const file = event.target.files[0]
     const path = `posts/${file.name}`
     if (file.type.split('/')[0] !== 'image') {

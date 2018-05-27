@@ -25,6 +25,10 @@
         <p>{{user.email}}</p>
       </div>
     </div>
+    <mat-card>
+        <app-upload [path]="path" [meta]="meta" [uploadType]="upload"></app-upload>
+
+      </mat-card>
   </div>
   
   <app-post-dashboard></app-post-dashboard>

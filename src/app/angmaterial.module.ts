@@ -7,6 +7,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatGridListModule } from "@angular/material/grid-list";
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatCardModule,
     MatToolbarModule,
     MatSlideToggleModule,
+    MatGridListModule,
     MatProgressBarModule
 
   ],
@@ -30,6 +32,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatCardModule,
     MatToolbarModule,
     MatSlideToggleModule,
+    MatGridListModule,
     MatProgressBarModule
   ],
   declarations: []

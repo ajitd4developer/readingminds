@@ -11,6 +11,7 @@ import { AngroutingModule } from './/angrouting.module';
 import { environment } from '../environments/environment';
 import { AngsharedModule } from './angshared/angshared.module';
 import { PostModule } from './post/post.module';
+import { GalleryModule } from './gallery/gallery.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PostModule } from './post/post.module';
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngsharedModule,
-    PostModule
+    PostModule,
+    GalleryModule
 
   ],
   providers: [],
