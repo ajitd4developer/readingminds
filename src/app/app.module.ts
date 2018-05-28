@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { AngsharedModule } from './angshared/angshared.module';
 import { PostModule } from './post/post.module';
 import { GalleryModule } from './gallery/gallery.module';
+import { ChatModule } from './chat/chat.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { GalleryModule } from './gallery/gallery.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngsharedModule,
     PostModule,
-    GalleryModule
+    GalleryModule,
+    ChatModule
 
   ],
   providers: [],

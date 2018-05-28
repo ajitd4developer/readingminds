@@ -5,7 +5,9 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import {GalleryListComponent} from './gallery/gallery-list/gallery-list.component'
 import { GalleryModule } from './gallery/gallery.module';
 const angroutes: Routes = [
-  {path :'', redirectTo: '/readingmindsusers' , pathMatch:'full' },
+  {path :'', redirectTo: '/chat' , pathMatch:'full' },
+  {path :'', loadChildren:"./chat/chat.module#ChatModule" },
+
  {path :'', loadChildren:"./authentication/authentication.module#AuthenticationModule" },
  { path: '', loadChildren: './gallery/gallery.module#GalleryModule' },
 
