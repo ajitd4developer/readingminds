@@ -6,6 +6,7 @@ import {
 } from 'angularfire2/firestore'
 import { AuthenticationService } from '../angcore/authentication.service'
 import { AngularFireStorage } from 'angularfire2/storage'
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class GalleryService {
@@ -20,14 +21,24 @@ export class GalleryService {
   ) {}
 
   getImages() {
-    const uid = this.auth.currentUserId
-    this.galleryCollection = this.afs.collection(`users/${uid}/`)
-    return this.galleryCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data()
-        const id = a.payload.doc.id
-        return { id, ...data }
-      })
+    // wrap the fn inside this switchMap to get the userId
+    // this way we get the id before mouting the component
+    return this.auth.user.switchMap(user => {
+      // here check if there is an user
+      if (user) {
+        const uid = this.auth.currentUserId
+        this.galleryCollection = this.afs.collection(`users/${uid}/gallery`)
+        return this.galleryCollection.snapshotChanges().map(actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data()
+            const id = a.payload.doc.id
+            return { id, ...data }
+          })
+        })
+      } else {
+        // or just return a no user
+        return Observable.of(null)
+      }
     })
   }
 
